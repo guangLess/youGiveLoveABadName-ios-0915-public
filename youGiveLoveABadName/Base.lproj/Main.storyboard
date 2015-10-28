@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,12 +19,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bonjovi.png" translatesAutoresizingMaskIntoConstraints="NO" id="TR2-VY-ejg">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bonjovi.png" translatesAutoresizingMaskIntoConstraints="NO" id="TR2-VY-ejg">
                                 <rect key="frame" x="0.0" y="197" width="320" height="174"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="TR2-VY-ejg" secondAttribute="height" multiplier="160:87" id="wZA-ez-bbL"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zaR-wJ-vCJ">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zaR-wJ-vCJ">
                                 <rect key="frame" x="134" y="498" width="53" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.63512729219999997" green="0.9340121925" blue="0.94752209600000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="53" id="cz1-HV-KVS"/>
+                                    <constraint firstAttribute="height" constant="30" id="s47-ed-K2W"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                 <state key="normal" title="Expand">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -30,10 +44,21 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <animations/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="TR2-VY-ejg" secondAttribute="bottom" constant="197" id="ISf-H9-Leb"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="zaR-wJ-vCJ" secondAttribute="bottom" constant="40" id="Vde-uC-3CU"/>
+                            <constraint firstItem="TR2-VY-ejg" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="akq-xv-jRI"/>
+                            <constraint firstItem="TR2-VY-ejg" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="177" id="gMz-Pr-yO8"/>
+                            <constraint firstAttribute="trailing" secondItem="TR2-VY-ejg" secondAttribute="trailing" id="pQw-NG-aMj"/>
+                            <constraint firstItem="zaR-wJ-vCJ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="114" id="xSg-rA-8eJ"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="bonJovi" destination="TR2-VY-ejg" id="Wbp-Ut-2KG"/>
+                        <outlet property="bottomSpaceCons" destination="ISf-H9-Leb" id="7lT-r0-u7x"/>
+                        <outlet property="topSpaceCons" destination="gMz-Pr-yO8" id="Ddt-wG-e2m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
